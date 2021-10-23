@@ -2,33 +2,78 @@
 <html lang="en">
   <head>
     <title>My First Webpage</title>
+    <link rel="stylesheet" href="assets/css/normalize.css" />
     <link rel="stylesheet" href="assets/css/training_page.css" />
-    <!-- <style>
-      img.userphotos {
-        width: 200px;
-        height: 200px;
-        border-radius: 100px;
-        float: left;
-        margin-right: 10px;
-      }
-      .usernames {
-        font-weight: bold;
-      }
-      em {
-        color: blueviolet;
-      }
-    </style> -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Owsama's First HTML/CSS Page" content="" />
   </head>
   <body style="background-color: #a6a6a7">
-    <img
-      class="userphotos"
-      src="https://images.unsplash.com/photo-1549056572-75914d5d5fd4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1964&q=80"
-      alt="Dragon figure image"
-    />
+    <a href="Owsama/about_owsama.html" target="_blank">
+      <img
+        class="userphotos"
+        src="assets/images/dragon.png"
+        alt="Dragon figure image"
+    /></a>
+
     <p class="usernames">image test</p>
-    <p>HTML Text <em>emphasis</em> element</p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, quasi!
+    </p>
+    <br />
+    <br />
+    <br />
+    <figure>
+      <video controls autoplay src="/assets/Videos/happy_in_nature.mp4">
+        Your browser doesn't support this videos
+      </video>
+      <figcaption>Happy Video</figcaption>
+    </figure>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Expenses</th>
+        </tr>
+        <tr>
+          <th>Category</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Professional Services</td>
+          <td>£100</td>
+        </tr>
+        <tr>
+          <td>Client Success Management</td>
+          <td>£150</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>Total</th>
+          <th>£250</th>
+        </tr>
+      </tfoot>
+    </table>
+    <article class="highlight">
+      <p id="first_paragraph">
+        Lorem psum dolor sit amet consectetur pisicing elit. Consequatur, ea
+        exercitationem. Molestias nostrum esse exercitationem amet vitae.
+        Voluptatum vero consequatur, exercitationem totam porro omnis dolorum
+      </p>
+    </article>
+    <section>
+      <a href="https://google.co.uk" target="_blank">Google.co.uk</a>
+      <article id="products"><p>Lorem ipsum dolor sit amet.</p></article>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </section>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p id="test_book">
+      Lorem psum dolor sit amet consectetur pisicing elit. Consequatur, ea
+      exercitationem. Molestias nostrum esse exercitationem amet vitae.
+      Voluptatum vero consequatur, exercitationem totam porro omnis dolorum
+    </p>
   </body>
 </html>

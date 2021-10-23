@@ -1,15 +1,82 @@
 @charset "UTF-8";
 
-img.userphotos {
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
+@font-face {
+  font-family: AnglicanText;
+  src: "assets/fonts/AnglicanText.ttf";
+}
+
+body {
+  margin: 10px;
+}
+
+.userphotos {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50px;
   float: left;
   margin-right: 10px;
 }
+
 .usernames {
   font-weight: bold;
 }
+
 em {
   color: blueviolet;
+}
+
+video {
+  width: 200px;
+}
+
+table,
+td,
+th {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+.highlight {
+  background-color: yellow;
+  width: 350px;
+  text-align: justify;
+}
+
+#first_paragraph {
+  text-align: center;
+  font-size: 15px;
+}
+
+a[href^="https"] {
+  color: blueviolet;
+}
+
+#products + p {
+  color: orange;
+}
+
+article p:first-of-type {
+  font-size: 125%;
+  font-style: italic;
+  font-weight: bold;
+}
+
+section p:last-of-type {
+  font-size: 75%;
+}
+
+#test_book::first-letter {
+  font-weight: bolder;
+  font-family: AnglicanText;
+  /* -webkit-initial-letter: 3;
+  initial-letter: 3; */
+  font-size: 200%;
+  float: left;
+  line-height: 1rem;
+  padding-top: 0.75rem;
+  margin-right: 0.25rem;
+  padding-bottom: 0.25rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
 }
