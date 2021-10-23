@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+img.userphotos {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  float: left;
+  margin-right: 10px;
+}
+.usernames {
+  font-weight: bold;
+}
+em {
+  color: blueviolet;
+}
