@@ -1,0 +1,68 @@
+html {
+  font-size: 62.5%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+p {
+  padding: 10px 20px;
+  border: 5px gold;
+}
+
+.box {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  margin: 1%;
+  z-index: -10;
+}
+
+.box1 {
+  background-color: gold;
+}
+
+.box2 {
+  background-color: green;
+  position: relative;
+  left: 4rem;
+  top: -3rem;
+  z-index: -20;
+}
+
+.box3 {
+  background-color: hotpink;
+  position: relative;
+  left: 7rem;
+  top: -6rem;
+  z-index: -30;
+}
+
+.avatar {
+  width: 5rem;
+  height: 5rem;
+  background-color: gold;
+  float: left;
+  margin: 0.5rem;
+}
+
+.tweet {
+  border: 2px solid lightgray;
+  margin: 3px;
+}
+
+.tweet::first-letter {
+  font-weight: bold;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.clear {
+  clear: both;
+}
