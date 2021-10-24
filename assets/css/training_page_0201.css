@@ -12,49 +12,23 @@ p {
   border: 5px gold;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 .box {
+  background-color: lightpink;
   position: relative;
-  width: 5rem;
-  height: 5rem;
   margin: 1%;
-  z-index: -10;
 }
 
-.box1 {
-  background-color: gold;
+.box:nth-of-type(2) {
+  background-color: lightsalmon;
 }
 
-.box2 {
-  background-color: green;
-  position: relative;
-  left: 4rem;
-  top: -3rem;
-  z-index: -20;
-}
-
-.box3 {
-  background-color: hotpink;
-  position: relative;
-  left: 7rem;
-  top: -6rem;
-  z-index: -30;
-}
-
-.avatar {
-  width: 5rem;
-  height: 5rem;
-  background-color: gold;
-  float: left;
-  margin: 0.5rem;
-}
-
-.tweet {
-  border: 2px solid lightgray;
-  margin: 3px;
-}
-
-.tweet::first-letter {
-  font-weight: bold;
+.box4 {
+  grid-area: footer;
 }
 
 .clearfix::after {
@@ -63,6 +37,17 @@ p {
   clear: both;
 }
 
-.clear {
-  clear: both;
+@media screen and (min-width: 400px) {
+  .container {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .container {
+    flex-direction: row;
+  }
+  .box {
+    background-color: magenta;
+  }
 }
