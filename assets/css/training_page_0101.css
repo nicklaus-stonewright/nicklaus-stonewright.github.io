@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: AnglicanText;
-  src: "assets/fonts/AnglicanText.ttf";
+  src: "../fonts/anglicantext-webfont.woff";
 }
 
 body {
