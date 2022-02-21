@@ -27,6 +27,7 @@ function Fizzbuzz() {
     this.checkifrunning = function () {
         if (!running) {
             document.getElementById("score_display").innerHTML = "Please click on start game button first";
+            document.getElementById("previous_number_display").className += " bg-info";
         }
     }
 
@@ -38,12 +39,12 @@ function Fizzbuzz() {
                     score += 1;
                     document.getElementById("previous_number_display").className += " bg-success";
                 }
-                this.incrementnumber();
             }
             else if (!is_Fizz) {
                 document.getElementById("previous_number_display").className += " bg-danger";
-
+                
             }
+            this.incrementnumber();
         }
     }
 
