@@ -1,0 +1,25 @@
+#page_header {
+  text-align: center;
+}
+
+.centretext {
+  text-align: center;
+}
+
+.container {
+  text-align: justify;
+}
+
+.centrecontent {
+  display: flex;
+  justify-content: center;
+}
+
+#score_display {
+  font-size: 200%;
+  text-align: center;
+}
+
+button {
+  margin: 10px;
+}
