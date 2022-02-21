@@ -33,10 +33,17 @@ function Fizzbuzz() {
     this.fizzbutton = function () {
         this.checkifrunning();
         if (running) {
-            if (is_Fizz) {
-                score += 1;
+            if (!is_Buzz || !is_FizzBuzz) {
+                if (is_Fizz) {
+                    score += 1;
+                    document.getElementById("previous_number_display").className += " btn-success";
+                }
+                this.incrementnumber();
             }
-            this.incrementnumber();
+            else if (!is_Fizz) {
+                document.getElementById("previous_number_display").className += " btn-danger";
+
+            }
         }
     }
 
