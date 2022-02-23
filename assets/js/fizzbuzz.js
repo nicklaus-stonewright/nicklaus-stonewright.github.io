@@ -4,6 +4,12 @@ function Fizzbuzz() {
     let buzz_number = 5
     let number = 0;
     let running = false;
+    let choices = ['Pass', 'Fizz', 'Buzz', 'FizzBuzz'];
+    let player_guess = 0;
+
+    this.checkplayerchoice = function () {
+
+    }
 
     this.start = function () {
         number = 1;
@@ -35,6 +41,8 @@ function Fizzbuzz() {
         if (running) {
             if (is_Fizz) {
                 score += 1;
+                player_guess = 1;
+                console.log(choices[player_guess]);
             }
             this.incrementnumber();
         }
