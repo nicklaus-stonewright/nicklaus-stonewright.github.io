@@ -12,13 +12,12 @@
     <title>FizzBuzz Game by Owsama</title>
   </head>
   <body>
-    <h3> version check 1.1</h3>
+    <div class="container"><sub>v001</sub></div>
     <h3 id="page_header">Welcome to a FizzBuzz Game by Owsama in JS</h3>
     <div class="container">
       <p>
-        Players generally sit in a circle. The player designated to go first
-        says the number "1", and the players then count upwards in turn.
-        However:
+        Click on Start Game. The player must then click on one of the buttons
+        depending on the value of the number shown:
       </p>
       <ul>
         <li>
@@ -27,6 +26,7 @@
         </li>
         <li>Any number <b>divisible by 5</b> by the word <b>Buzz</b></li>
         <li>Numbers <b>divisible by 3 and 5</b> become <b>FizzBuzz</b></li>
+        <li>All others numbers become <b>Pass</b></li>
       </ul>
       <div class="container centrecontent">
         <button
@@ -82,7 +82,10 @@
         >
           Get Ready!
         </div>
-        <div class="container p-3 my-3" id="previous_number_display"></div>
+        <div
+          class="container p-3 my-3 border"
+          id="previous_number_display"
+        ></div>
         <script src="../assets/js/fizzbuzz.js"></script>
       </div>
     </div>

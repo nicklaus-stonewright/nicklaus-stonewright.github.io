@@ -6,11 +6,9 @@ function Fizzbuzz() {
     let running = false;
     let choices = ['Pass', 'Fizz', 'Buzz', 'FizzBuzz'];
     let player_guess = 0;
-
-    this.checkplayerchoice = function () {
-
-    }
-
+    let correct_choice = 0;
+   
+    // start and setup functions
     this.start = function () {
         number = 1;
         score = 0;
@@ -18,62 +16,53 @@ function Fizzbuzz() {
         this.updatedisplay();
         this.updateconditions();
     }
-
-    this.updateconditions = function () {
-        is_Fizz = (number % fizz_number == 0) || false
-        is_Buzz = (number % buzz_number == 0) || false
-        is_FizzBuzz = (is_Fizz && is_Buzz) || false
-    }
-
+    
     this.updatedisplay = function () {
         document.getElementById("number_display").innerHTML = "What about: " + number;
         document.getElementById("score_display").innerHTML = "your score is: " + score;
     }
-
+    
+    this.updateconditions = function () {
+        is_Fizz = (number % fizz_number == 0) || false
+        is_Buzz = (number % buzz_number == 0) || false
+        is_FizzBuzz = (is_Fizz && is_Buzz) || false
+        is_Pass = (!is_Fizz && !is_Buzz) || false
+        if (is_Pass) correct_choice = 0;
+        if (is_Fizz) correct_choice = 1;
+        if (is_Buzz) correct_choice = 2;
+        if (is_FizzBuzz) correct_choice = 3;
+        
+    }
+    
     this.checkifrunning = function () {
         if (!running) {
             document.getElementById("score_display").innerHTML = "Please click on start game button first";
             document.getElementById("previous_number_display").className += " bg-info";
         }
+        else return true;
     }
 
+    //button functions   
     this.fizzbutton = function () {
-        this.checkifrunning();
-        if (running) {
-            if (is_Fizz) {
-                score += 1;
-                player_guess = 1;
-                console.log(choices[player_guess]);
-            if (!is_Buzz && !is_FizzBuzz) {
-                if (is_Fizz) {
-                    score += 1;
-                    document.getElementById("previous_number_display").className += " bg-success";
-                }
-            }
-            else if (!is_Fizz) {
-                document.getElementById("previous_number_display").className += " bg-danger";
-                
-            }
+        if (this.checkifrunning()) {
+            player_guess = 1;
+            this.checkplayerchoice();
             this.incrementnumber();
         }
     }
 
     this.buzzbutton = function () {
-        this.checkifrunning();
-        if (running) {
-            if (is_Buzz) {
-                score += 1;
-            }
+        if (this.checkifrunning()) {
+            player_guess = 2;
+            this.checkplayerchoice();
             this.incrementnumber();
         }
     }
 
     this.fizzbuzzbutton = function () {
-        this.checkifrunning();
-        if (running) {
-            if (is_FizzBuzz) {
-                score += 2;
-            }
+        if (this.checkifrunning()) {
+            player_guess = 3;
+            this.checkplayerchoice();
             this.incrementnumber();
         }
     }
@@ -81,8 +70,33 @@ function Fizzbuzz() {
     this.passbutton = function () {
         this.checkifrunning();
         if (running) {
+            player_guess = 0;
+            this.checkplayerchoice();
             this.incrementnumber();
         }
+    }
+
+    //Scoring functions
+    this.checkplayerchoice = function () {
+        if (correct_choice == 3 && player_guess == correct_choice) {
+            score += 2;
+            this.correctchoicecolour();
+        }
+        else if (player_guess == correct_choice) {
+            score += 1;
+            this.correctchoicecolour();
+        }
+        else if (player_guess !== correct_choice) {
+            this.wrongchoicecolour();
+        }
+    }
+
+    this.correctchoicecolour = function () {
+        document.getElementById("previous_number_display").style = "background-color:MediumSeaGreen;";
+    }
+
+    this.wrongchoicecolour = function () {
+        document.getElementById("previous_number_display").style = "background-color:Tomato;";
     }
 
     this.previousnumber = function () {
