@@ -71,7 +71,7 @@ function FizzBuzz() {
         this.checkIfRunning();
         if (running) {
             player_guess = 0;
-            this.checkPlayerChoice();
+            // this.checkPlayerChoice();
             this.incrementNumber();
         }
     }
