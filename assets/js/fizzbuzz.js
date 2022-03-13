@@ -1,4 +1,4 @@
-function Fizzbuzz() {
+function FizzBuzz() {
     let score = 0;
     let fizz_number = 3
     let buzz_number = 5
@@ -13,16 +13,16 @@ function Fizzbuzz() {
         number = 1;
         score = 0;
         running = true;
-        this.updatedisplay();
-        this.updateconditions();
+        this.updateDisplay();
+        this.updateConditions();
     }
     
-    this.updatedisplay = function () {
+    this.updateDisplay = function () {
         document.getElementById("number_display").innerHTML = "What about: " + number;
         document.getElementById("score_display").innerHTML = "your score is: " + score;
     }
     
-    this.updateconditions = function () {
+    this.updateConditions = function () {
         is_Fizz = (number % fizz_number == 0) || false
         is_Buzz = (number % buzz_number == 0) || false
         is_FizzBuzz = (is_Fizz && is_Buzz) || false
@@ -34,7 +34,7 @@ function Fizzbuzz() {
         
     }
     
-    this.checkifrunning = function () {
+    this.checkIfRunning = function () {
         if (!running) {
             document.getElementById("score_display").innerHTML = "Please click on start game button first";
             document.getElementById("previous_number_display").className += " bg-info";
@@ -43,63 +43,63 @@ function Fizzbuzz() {
     }
 
     //button functions   
-    this.fizzbutton = function () {
-        if (this.checkifrunning()) {
+    this.fizzButton = function () {
+        if (this.checkIfRunning()) {
             player_guess = 1;
-            this.checkplayerchoice();
-            this.incrementnumber();
+            this.checkPlayerChoice();
+            this.incrementNumber();
         }
     }
 
-    this.buzzbutton = function () {
-        if (this.checkifrunning()) {
+    this.buzzButton = function () {
+        if (this.checkIfRunning()) {
             player_guess = 2;
-            this.checkplayerchoice();
-            this.incrementnumber();
+            this.checkPlayerChoice();
+            this.incrementNumber();
         }
     }
 
-    this.fizzbuzzbutton = function () {
-        if (this.checkifrunning()) {
+    this.fizzBuzzButton = function () {
+        if (this.checkIfRunning()) {
             player_guess = 3;
-            this.checkplayerchoice();
-            this.incrementnumber();
+            this.checkPlayerChoice();
+            this.incrementNumber();
         }
     }
 
-    this.passbutton = function () {
-        this.checkifrunning();
+    this.passButton = function () {
+        this.checkIfRunning();
         if (running) {
             player_guess = 0;
-            this.checkplayerchoice();
-            this.incrementnumber();
+            this.checkPlayerChoice();
+            this.incrementNumber();
         }
     }
 
     //Scoring functions
-    this.checkplayerchoice = function () {
+    this.checkPlayerChoice = function () {
         if (correct_choice == 3 && player_guess == correct_choice) {
             score += 2;
-            this.correctchoicecolour();
+            this.correctChoiceColour();
         }
         else if (player_guess == correct_choice) {
             score += 1;
-            this.correctchoicecolour();
+            this.correctChoiceColour();
         }
         else if (player_guess !== correct_choice) {
-            this.wrongchoicecolour();
+            this.wrongChoiceColour();
         }
     }
 
-    this.correctchoicecolour = function () {
+    this.correctChoiceColour = function () {
         document.getElementById("previous_number_display").style = "background-color:MediumSeaGreen;";
     }
 
-    this.wrongchoicecolour = function () {
+    this.wrongChoiceColour = function () {
         document.getElementById("previous_number_display").style = "background-color:Tomato;";
     }
 
-    this.previousnumber = function () {
+    this.previousNumber = function () {
         if (!is_Fizz && !is_Buzz) {
             document.getElementById("previous_number_display")
                 .innerHTML = number + " was <b>not divisible by either " + fizz_number + " or " + buzz_number + "</b>";
@@ -118,11 +118,11 @@ function Fizzbuzz() {
         }
     }
 
-    this.incrementnumber = function () {
-        this.previousnumber();
+    this.incrementNumber = function () {
+        this.previousNumber();
         number += 1;
-        this.updateconditions();
-        this.updatedisplay();
+        this.updateConditions();
+        this.updateDisplay();
     }
 
 }
