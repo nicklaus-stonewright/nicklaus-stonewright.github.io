@@ -48,54 +48,77 @@
           Start Game
         </button>
       </div>
-      <div class="container p-3 my-3 bg-success text-white" id="score_display">
-        Lets Game!
-      </div>
-      <div id="fizzbuzzgame">
-        <div class="container">
-          <h4 class="centretext">Buttons</h4>
-          <div class="centrecontent">
-            <button
-              type="button"
-              class="btn btn-info"
-              onclick="game.fizzButton()"
-            >
-              Fizz
-            </button>
-            <button
-              type="button"
-              class="btn btn-info"
-              onclick="game.buzzButton()"
-            >
-              Buzz
-            </button>
-            <button
-              type="button"
-              class="btn btn-danger"
-              onclick="game.fizzBuzzButton()"
-            >
-              FizzBuzz
-            </button>
-            <button
-              type="button"
-              class="btn btn-success"
-              onclick="game.passButton()"
-            >
-              Pass
-            </button>
+      <div class="container centrecontent text-white" id="warningMessage"></div>
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-4 p-3 my-3 bg-success text-white text-wrap"
+            id="score_display"
+          >
+            Lets Game!
+          </div>
+          <div class="col-1"></div>
+          <div
+            class="col-7 p-3 my-3 bg-primary text-white centrecontent text-wrap align-middle"
+            id="number_display"
+          >
+            Get Ready!
           </div>
         </div>
-
-        <div
-          class="container p-3 my-3 bg-primary text-white centrecontent"
-          id="number_display"
-        >
-          Get Ready!
+      </div>
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-4 centrecontent align-middle"
+            id="timer_display"
+          ></div>
+          <div class="col-1"></div>
+          <div class="col-7">
+            <div id="fizzbuzzgame">
+              <div class="container">
+                <div class="centrecontent">
+                  <button
+                    type="button"
+                    class="btn btn-info"
+                    onclick="game.fizzButton()"
+                  >
+                    Fizz
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-info"
+                    onclick="game.buzzButton()"
+                  >
+                    Buzz
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    onclick="game.fizzBuzzButton()"
+                  >
+                    FizzBuzz
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    onclick="game.passButton()"
+                  >
+                    Pass
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div
-          class="container p-3 my-3 border"
-          id="previous_number_display"
-        ></div>
+        <div class="row">
+          <div class="col-4"></div>
+          <div
+            class="container p-1 m-1 col-4 centrecontent"
+            id="previous_number_feedback"
+          ></div>
+          <div class="col-4"></div>
+        </div>
+        <div class="container centrecontent" id="previous_number_display"></div>
         <script src="../assets/js/fizzbuzz.js"></script>
       </div>
     </div>

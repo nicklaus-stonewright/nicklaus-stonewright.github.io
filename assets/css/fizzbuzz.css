@@ -16,7 +16,20 @@
 }
 
 #score_display {
-  font-size: 200%;
+  font-size: 100%;
+  text-align: center;
+}
+
+#number_display {
+  font-size: 125%;
+  text-align: center;
+}
+#warningMessage {
+  font-size: 125%;
+  text-align: center;
+}
+#previous_number_feedback {
+  font-size: 125%;
   text-align: center;
 }
 

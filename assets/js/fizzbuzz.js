@@ -1,4 +1,17 @@
+
+//Timer object
+
+
+
+
+
+
+
+
+//Fizz Buzz object
 function FizzBuzz() {
+    let timerDuration = 5;
+    let timerDisplay = document.getElementById("timer_display");
     let score = 0;
     let fizz_number = 3
     let buzz_number = 5
@@ -8,13 +21,41 @@ function FizzBuzz() {
     let player_guess = 0;
     let correct_choice = 0;
 
+    this.startTimer = function (duration, display) {
+        var timer = duration, minutes, seconds;
+        
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.innerHTML = minutes + ":" + seconds;
+
+            if (--timer < 0) {
+                display.innerHTML = `your score is ${score}`;
+            }
+        }, 1000);
+    }
+
+    this.Timer = function () {
+        this.startTimer(timerDuration, timerDisplay)
+    }
+
+    this.scream = function () {
+        console.log('Aaaaaaa');
+    }
+
     // start and setup functions
     this.start = function () {
         number = 1;
         score = 0;
         running = true;
+        this.Timer();
         this.updateDisplay();
         this.updateConditions();
+        this.clearWarningMessage();
     }
 
     this.updateDisplay = function () {
@@ -35,10 +76,15 @@ function FizzBuzz() {
 
     this.checkIfRunning = function () {
         if (!running) {
-            document.getElementById("score_display").innerHTML = "Please click on start game button first";
-            document.getElementById("previous_number_display").className += " bg-info";
+            document.getElementById("warningMessage").innerHTML = "Please click on start game button first";
+            document.getElementById("warningMessage").className += " bg-danger";
         }
         else return true;
+    }
+
+    this.clearWarningMessage = function () {
+        document.getElementById("warningMessage").innerHTML = "";
+        document.getElementById("warningMessage").className = "";
     }
 
     //button functions   
@@ -70,7 +116,7 @@ function FizzBuzz() {
         this.checkIfRunning();
         if (running) {
             player_guess = 0;
-            // this.checkPlayerChoice();
+            this.checkPlayerChoice();
             this.incrementNumber();
         }
     }
@@ -78,49 +124,52 @@ function FizzBuzz() {
     //Scoring functions
     this.checkPlayerChoice = function () {
         if (correct_choice == 3 && player_guess == correct_choice) {
+            document.getElementById("previous_number_feedback").innerHTML = "Correct!";
             score += 2;
             this.correctChoiceColour();
         }
         else if (player_guess == correct_choice) {
+            document.getElementById("previous_number_feedback").innerHTML = "Correct!";
             score += 1;
             this.correctChoiceColour();
         }
         else if (player_guess !== correct_choice) {
+            document.getElementById("previous_number_feedback").innerHTML = "Wrong!";
             this.wrongChoiceColour();
         }
     }
 
     this.correctChoiceColour = function () {
-        document.getElementById("previous_number_display").style = "background-color:MediumSeaGreen;";
+        document.getElementById("previous_number_feedback").style = "background-color:MediumSeaGreen;";
     }
 
     this.wrongChoiceColour = function () {
-        document.getElementById("previous_number_display").style = "background-color:Tomato;";
+        document.getElementById("previous_number_feedback").style = "background-color:Tomato;";
     }
 
     this.previousNumber = function () {
-        console.log('Correct Choice was', choices[correct_choice]);
+        // console.log('Correct Choice was', choices[correct_choice]);
         if (!is_Fizz && !is_Buzz) {
             document.getElementById("previous_number_display")
-                .innerHTML = number + " was <b>not divisible by either " + fizz_number + " or " + buzz_number + "</b>";
+                .innerHTML = number + " was not divisible by either " + fizz_number + " or " + buzz_number;
         }
         if (is_FizzBuzz) {
             document.getElementById("previous_number_display")
-                .innerHTML = number + " was <b>divisible by " + fizz_number + " and " + buzz_number + "</b>";
+                .innerHTML = number + " was divisible by " + fizz_number + " and " + buzz_number;
         }
         if (is_Fizz) {
             document.getElementById("previous_number_display")
-                .innerHTML = number + " was <b>divisible by " + fizz_number + "</b>";
+                .innerHTML = number + " was divisible by " + fizz_number;
         }
         if (is_Buzz) {
             document.getElementById("previous_number_display")
-                .innerHTML = number + " was <b>divisible by " + buzz_number + "</b>";
+                .innerHTML = number + " was divisible by " + buzz_number;
         }
     }
 
     this.incrementNumber = function () {
         this.previousNumber();
-        number += 1;
+        number = Math.floor(Math.random() * 150);
         this.updateConditions();
         this.updateDisplay();
     }
