@@ -9,25 +9,12 @@ body {
   margin: 10px;
 }
 
-.userphotos {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50px;
-  float: left;
-  margin-right: 10px;
-}
-
-.usernames {
-  font-weight: bold;
-}
-
 em {
   color: blueviolet;
 }
 
 video {
-  width: 200px;
+  width: 50vw;
   height: 2s00px;
 }
 
@@ -44,6 +31,33 @@ th {
   padding: 5px;
 }
 
+a[href^="https"] {
+  color: blueviolet;
+}
+
+article p:first-of-type {
+  font-size: 125%;
+  font-style: italic;
+  font-weight: bold;
+}
+
+section p:last-of-type {
+  font-size: 75%;
+}
+
+.userphotos {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50px;
+  float: left;
+  margin-right: 10px;
+}
+
+.usernames {
+  font-weight: bold;
+}
+
 .highlight {
   background-color: yellow;
   width: 350px;
@@ -55,22 +69,8 @@ th {
   font-size: 15px;
 }
 
-a[href^="https"] {
-  color: blueviolet;
-}
-
 #products + p {
   color: orange;
-}
-
-article p:first-of-type {
-  font-size: 125%;
-  font-style: italic;
-  font-weight: bold;
-}
-
-section p:last-of-type {
-  font-size: 75%;
 }
 
 #test_book::first-letter {
