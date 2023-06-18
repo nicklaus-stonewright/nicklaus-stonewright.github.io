@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"
+    />
+  </head>
+  <body>
+    <script>
+      $("body").terminal(
+        {
+          hello: function (what) {
+            this.echo("Hello, " + what + ". Welcome to this terminal.");
+          },
+          give: function (secret) {
+            if (secret == "links") {
+              this.echo("http://nicklaus-stonewright.tech/links");
+            } else if (secret == "klaus") {
+              this.echo(
+                "http://nicklaus-stonewright.tech/nicklaus/about_nicklaus.html"
+              );
+              this.echo("https://www.linkedin.com/in/Nicklaus-Stonewright/");
+            } else if (secret == "filippo") {
+              this.echo(
+                "http://nicklaus-stonewright.tech/filippo_projects/about_filippo.html"
+              );
+            } else if (secret == "love") {
+              this.echo("http://nicklaus-stonewright.tech/links");
+              this.echo("");
+              this.echo(
+                "        https://nicklaus-stonewright.tech/mini_projects/fizzbuzz_game"
+              );
+              this.echo(
+                "        https://nicklaus-stonewright.tech/mini_projects/foodbox"
+              );
+              this.echo(
+                "        https://nicklaus-stonewright.tech/mini_projects/rockpaperscissors"
+              );
+              this.echo(
+                "        https://nicklaus-stonewright.tech/mini_projects/mortgage_calculator"
+              );
+            } else {
+              this.echo("Say please bitch!");
+            }
+          },
+          please: function (...args) {
+            inputs = args.join(" ");
+            this.echo('really? "' + inputs + '"');
+            this.echo("Grow a spine!");
+            this.echo("Say pretty please");
+          },
+          pretty: function (...args) {
+            if (args[0] == "please") {
+              remove_please = args.splice(0, 1);
+              inputs = args.join(" ");
+              this.echo('really... again? "' + inputs + '"');
+              this.echo("Piss off punk");
+            }
+          },
+          love: function (secret) {
+            if (secret == "you") {
+              this.echo("http://nicklaus-stonewright.tech/links");
+              this.echo("");
+              this.echo(
+                "        https://nicklaus-stonewright.tech/mini_projects/fizzbuzz_game"
+              );
+              this.echo(
+                "        https://nicklaus-stonewright.tech/mini_projects/foodbox"
+              );
+              this.echo(
+                "        https://nicklaus-stonewright.tech/mini_projects/rockpaperscissors"
+              );
+              this.echo(
+                "        https://nicklaus-stonewright.tech/mini_projects/mortgage_calculator"
+              );
+            }
+          },
+        },
+        {
+          checkArity: false,
+          greetings: "Web Terminal",
+        }
+      );
+      $("body").terminal({
+        greetings: "Web Terminal",
+      });
+    </script>
+  </body>
+</html>
