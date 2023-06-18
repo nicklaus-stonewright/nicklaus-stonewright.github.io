@@ -48,15 +48,14 @@
           },
           please: function (...args) {
             inputs = args.join(" ");
-            this.echo('really? "' + inputs + '"');
+            this.echo('really? "please ' + inputs + '"');
             this.echo("Grow a spine!");
             this.echo("Say pretty please");
           },
           pretty: function (...args) {
             if (args[0] == "please") {
-              remove_please = args.splice(0, 1);
               inputs = args.join(" ");
-              this.echo('really... again? "' + inputs + '"');
+              this.echo('really... again? "pretty ' + inputs + '"');
               this.echo("Piss off punk");
             }
           },
