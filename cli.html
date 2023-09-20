@@ -7,10 +7,30 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"
     />
+    <style>
+      body {
+        background-color: black;
+        margin: 5; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+      }
+      /* Set a default size for the terminal */
+      #terminal-container {
+        width: 75%; /* 50% of the available width */
+        height: 100%; /* Adjust the height as needed */
+      }
+
+      /* Use media queries to adjust the size for smaller screens */
+      @media (max-width: 768px) {
+        #terminal-container {
+          width: 100%; /* 100% of the available width on smaller screens (phones) */
+        }
+      }
+    </style>
   </head>
   <body>
+    <div id="terminal-container"></div>
     <script>
-      $("body").terminal(
+      $("#terminal-container").terminal(
         {
           hello: function (what) {
             this.echo("Hello, " + what + ". Welcome to this terminal.");
@@ -81,11 +101,11 @@
         {
           checkArity: false,
           greetings: "Web Terminal",
+          onInit: function (terminal) {
+            // Increase the font size of the terminal text
+          },
         }
       );
-      $("body").terminal({
-        greetings: "Web Terminal",
-      });
     </script>
   </body>
 </html>
